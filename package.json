@@ -1,0 +1,37 @@
+{
+  "name": "@dashkite/posh",
+  "version": "0.0.0",
+  "description": "Application CSS",
+  "keywords": [],
+  "homepage": "https://github.com/dashkite/posh#readme",
+  "bugs": {
+    "url": "https://github.com/dashkite/posh/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dashkite/posh.git"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "Daniel Yoder",
+  "exports": {
+    ".": {
+      "browser": "./build/browser/src/index.js"
+    }
+  },
+  "main": "build/browser/src/index.js",
+  "files": [
+    "build/browser/src"
+  ],
+  "scripts": {
+    "test": "genie test",
+    "build": "genie build"
+  },
+  "devDependencies": {
+    "@dashkite/amen": "^0.2.0",
+    "@dashkite/amen-console": "^0.0.2",
+    "@dashkite/assert": "^0.1.4",
+    "@dashkite/genie": "link:../genie",
+    "@dashkite/genie-coffee": "link:../genie-coffee",
+    "@dashkite/genie-stylus": "link:../genie-stylus"
+  }
+}

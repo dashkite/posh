@@ -1,0 +1,67 @@
+aside
+  @media screen and (max-width: du(3))
+    --aside-display none
+
+.nav
+  @media screen and (max-width: du(3))
+    --block-nav-header-flex-direction column
+    .nav:last-child
+      --block-justify-content flex-start
+      --block-child-justify-content flex-start
+      --text-align left
+
+.section, .table
+  @media screen and (max-width: du(3))
+    --section-aside-float none
+    --section-aside-margin-left none
+    --section-aside-margin-right none
+  header
+    @media screen and (max-width: du(3))
+      --section-header-flex-direction column
+    .nav:last-child
+      @media screen and (max-width: du(3))
+        --block-justify-content flex-start
+        --block-child-justify-content flex-start
+        --text-align left
+
+.collection
+  @media screen and (max-width: du(3))
+    --collection-main-flex-direction column
+    --collection-main-flex-wrap nowrap
+  header
+    @media screen and (max-width: du(3))
+      --collection-header-flex-direction column
+    .nav:last-child
+      @media screen and (max-width: du(3))
+        --block-justify-content flex-start
+        --block-child-justify-content flex-start
+        --text-align left
+
+.banner-split
+  @media screen and (max-width: du(3))
+    center()
+    --block-child-align-items center
+    --banner-split-flex-direction column
+    .svg
+      max-width s("min(100%, %s)", du(1.5))
+  @media screen and (max-width: du(2))
+    larger()
+
+.banner
+  @media screen and (max-width: du(2))
+    larger()
+
+@media screen and (max-width: du(3))
+  .table
+    .main
+      max-width du(1)
+      background-color var(--table-background-color, var(--neutral-accent))
+      border 1px solid var(--table-border-color, var(--neutral-accent))
+      padding 1rem
+      max-height vu(2)
+
+// adjust header and footer padding on small screens
+@media screen and (max-width: du(2))
+  body > header > .header > *, body > footer
+    padding-left 1rem
+    padding-right 1rem

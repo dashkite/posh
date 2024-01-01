@@ -1,0 +1,357 @@
+header, header > * > .container
+  &:empty
+    display none
+
+  .block
+
+    &.nav
+      --block-child-align-items center
+      center()
+
+      &:first-child
+        left()
+      
+      &:not(:only-child)
+        &:last-child
+          right()
+
+      & > nav
+        column-gap var(--header-nav-column-gap) // tweak column gap to seperate by slightly more than 1 character
+        flex-direction var(--header-nav-flex-direction)
+
+
+    &.image
+      &:first-child
+        left()
+      
+      &:not(:only-child)
+        &:last-child
+          right()
+
+      img, svg, .product-logo
+        max-height var(--header-img-max-height)
+
+
+    &.section
+
+      &:first-child
+        left()
+
+      &:not(:only-child)
+        &:last-child
+          right()
+
+        section
+          footer
+            margin-left var(--header-section-footer-margin-left)
+
+    &.button
+
+      &:first-child
+        left()
+
+      &:last-child
+        right()
+
+aside 
+  --heading-min-width du(.5) //make min width smaller for aside
+  --copy-min-width du(.5) //make min width smaller for aside
+  --copy-margin 1rem //adjust gap between copy
+  --block-gap 1rem
+  --block-child-gap 1rem
+
+  display var(--aside-display)
+  flex-direction var(--aside-flex-direction)
+  flex-wrap var(--aside-flex-wrap)
+  justify-content var(--aside-justify-content)
+  align-items var(--aside-align-items)
+  gap var(--aside-gap)
+  order var(--aside-order)
+  
+
+  flex-grow var(--aside-flex-grow)
+  flex-shrink var(--aside-flex-shrink)
+  flex-basis var(--aside-flex-basis)
+  max-width var(--aside-max-width)
+  max-height var(--aside-max-height)
+  height var(--aside-height)
+  width var(--aside-width)
+  border var(--aside-border)
+  padding var(--aside-padding)
+  border-radius var(--aside-border-radius)
+  box-shadow var(--aside-box-shadow)
+
+  & > .block 
+    --first-level-heading-font-size var(--default-heading-font-size)
+    --first-level-heading-line-height var(--default-heading-line-height)
+    --second-level-heading-font-size var(--small-heading-font-size)
+    --second-level-heading-line-height var(--small-heading-line-height)
+    --third-level-heading-font-size var(--smaller-heading-font-size)
+    --third-level-heading-line-height var(--smaller-heading-line-height)
+
+    img
+      max-height var(--aside-img-max-height)
+
+    section
+      flex-direction var(--aside-section-flex-direction)
+      
+    nav
+      flex-direction var(--aside-nav-flex-direction)
+
+
+main, .collection > section > .main
+  & > .block
+
+    &.banner
+      widest()
+      largest()
+      center()
+
+      margin var(--banner-margin)
+      padding var(--banner-padding-vertical) var(--banner-padding-horizontal)
+
+
+    &.banner-split
+      widest()
+      largest()
+      
+      flex-direction var(--banner-split-flex-direction)
+      padding var(--banner-split-padding-vertical) var(--banner-split-padding-horizontal)
+      justify-content space-between
+
+      & > section
+        flex-direction column
+        justify-content center
+        align-self center
+        flex-wrap nowrap
+
+      & > .svg
+        max-width s("min(50%, %s)", du(1.5))
+        max-height 100%
+        min-width var(--banner-split-image-min-width)
+        order var(--banner-split-image-order)
+        align-self center
+
+
+    &.article, &.section
+
+      article, section
+        flex-direction var(--section-flex-direction)
+        flex-wrap var(--section-flex-wrap)
+        gap var(--section-gap)
+
+      svg
+        color var(--icon-color)
+        font-size var(--section-icon-font-size)
+
+      header
+        display var(--section-header-display)
+        flex-direction var(--section-header-flex-direction)
+        font-size var(--section-header-font-size)
+        max-width var(--section-header-max-width)
+        gap var(--section-header-gap)
+
+        h1 ~ h2, h2 ~ h3
+          margin-top var(--section-header-subtitle-margin-top)   
+
+      .main
+        display var(--section-main-display)
+
+        figure
+          display var(--section-figure-display)
+          flex-direction var(--section-figure-flex-direction)
+          align-items var(--section-figure-align-items)
+          height var(--section-figure-height)
+          margin-top var(--section-figure-margin-top)
+          margin-bottom var(--section-figure-margin-bottom)
+            
+        svg
+          margin-top var(--section-figure-margin-top)
+          margin-bottom var(--section-figure-margin-bottom)
+        
+      footer
+        smaller()
+        margin-top var(--section-footer-margin-top)
+
+    
+    &.article
+      font-size var(--article-font-size)
+      max-width var(--article-max-width)
+
+      article, section
+        figure
+          margin-bottom var(--article-figure-margin-bottom)
+          &:not(:first-child)
+            margin-top var(--article-figure-margin-top)
+          img
+            max-width var(--article-img-max-width)
+            max-height var(--article-img-max-height)
+
+      .byline
+        apply-caption()
+        margin-top var(--article-byline-margin-top)
+        display var(--article-byline-display)
+        flex-wrap var(--article-byline-flex-wrap)
+        column-gap var(--article-byline-column-gap)
+        .published
+          font-style var(--article-byline-published-font-style)
+        .authors
+          display var(--article-byline-authors-display)
+          flex-wrap var(--article-byline-authors-flex-wrap)
+          .author
+            font-weight var(--article-byline-author-font-weight)
+            &:not(:last-child)::after
+              content var(--article-byline-author-seperator)
+              margin-right 1ch
+
+
+    &.section
+      .main
+        overflow var(--section-main-overflow)
+        font-size var(--copy-font-size, 1rem)
+      
+      section
+        align-items var(--section-align-items)
+
+        .main
+          & > picture:not(:last-child) > img, & > svg:not(:last-child)
+              float var(--section-aside-float)
+              margin-top var(--section-img-margin-top)
+              margin-left var(--section-aside-margin-left)
+              margin-right var(--section-aside-margin-right)
+              margin-bottom var(--section-img-margin-bottom)
+              max-width var(--section-img-max-width)
+              max-height var(--section-img-max-height)
+
+          & > picture + p, & > svg + p
+            margin-top 0
+
+
+    &.collection
+      left()
+      narrow()
+      
+      h2
+        font-size var(--second-level-heading-font-size)
+        line-height var(--second-level-heading-line-height)
+      h3
+        font-size var(--third-level-heading-font-size)
+        line-height var(--third-level-heading-line-height)
+      
+      & > section
+        flex-direction var(--collection-flex-direction)
+        flex-wrap var(--collection-flex-wrap)
+        overflow var(--collection-overflow)
+        height var(--collection-height)
+        gap var(--collection-gap)
+        border var(--collection-border)
+        padding var(--collection-padding)
+        box-shadow var(--collection-box-shadow)
+
+        & > header
+          display var(--collection-header-display)
+          flex-direction var(--collection-header-flex-direction)
+          gap var(--collection-header-gap)
+          
+          nav
+            --block-child-max-width max-content
+
+        & > .main
+          display var(--collection-main-display)
+          flex-direction var(--collection-main-flex-direction)
+          flex-wrap var(--collection-main-flex-wrap)
+          justify-content var(--collection-main-justify-content)
+          align-items var(--collection-main-align-items)
+          gap var(--collection-main-gap)
+
+          & > .block
+
+            &.article, &.section
+              img
+                max-height var(--collection-summary-img-max-height)
+                max-width var(--collection-summary-img-max-width)
+
+            &.image
+              flex-grow var(--collection-image-flex-grow)
+              
+              figure
+                width var(--collection-image-figure-width)
+
+
+
+
+    &.table
+      narrow()
+      --copy-min-width du(.25)
+
+      section
+        flex-direction column
+
+      .main
+        display flex
+        flex-direction column
+        width 100%
+        border-radius 0.5rem
+        overflow auto
+
+      header
+        display var(--section-header-display)
+        flex-direction var(--section-header-flex-direction)
+        font-size var(--section-header-font-size)
+        max-width var(--section-header-max-width)
+        gap var(--section-header-gap)
+
+        h1 ~ h2, h2 ~ h3
+          margin-top var(--section-header-subtitle-margin-top) 
+
+      table
+        border-collapse separate
+        border-spacing 0
+        overflow scroll
+
+        p, ul, blockquote, li
+          &:last-child
+            margin-bottom 0
+
+        thead
+          font-weight bold
+
+          th
+            border-top 1px solid var(--primary-accent)
+
+            &:first-child
+              border-top-left-radius 0.5rem
+
+            &:last-child
+              border-top-right-radius 0.5rem
+
+
+        th, td
+          padding 1rem
+          border-right 1px solid var(--primary-accent)
+          border-bottom 1px solid var(--primary-accent)
+
+          &:first-child
+            border-left 1px solid var(--primary-accent)
+
+        tbody
+
+          tr:last-child
+            & > th, & > td
+
+              &:first-child
+                border-bottom-left-radius 0.5rem
+
+              &:last-child
+                border-bottom-right-radius 0.5rem
+
+        tbody:first-child
+          tr:first-child
+            & > th, & > td
+              border-top 1px solid var(--primary-accent)
+
+              &:first-child
+                border-top-left-radius 0.5rem
+
+              &:last-child
+                border-top-right-radius 0.5rem

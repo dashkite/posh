@@ -1,0 +1,156 @@
+.form
+
+  form
+    flex-direction var(--form-flex-direction)
+
+    & > section
+      display flex
+      flex-direction column
+      gap 2rem
+
+  footer
+    width 20rem
+    p
+      smaller()
+  
+  .field
+    display flex
+    flex-direction column
+    gap 0.5rem
+    width 20rem
+
+    &.radio-container
+      gap 1rem
+
+    & > span
+      font-weight bold
+      display block
+      margin-right 0.5rem
+
+    label
+      display flex
+      flex-direction column
+      margin -0.25rem
+
+      &.radio
+        flex-direction row
+        gap 0.5rem
+        align-items center
+
+      & > *
+        margin 0.25rem
+
+      span
+        font-weight bold
+        display block
+        margin-right 0.5rem
+
+      textarea
+        width du(1)
+        height vu(0.5)
+        padding 0.75rem 0.75rem 0.5rem
+        border-radius 0.5rem
+        border 1px solid var(--form-border-color)
+        max-width du(2)
+        max-height vu(3)
+        &:focus
+          outline none
+          background var(--form-focus-color)
+          border 1px solid var(--form-focus-color)
+
+      input
+        display inline-block
+        border-radius 0.5rem
+        border 1px solid var(--form-border-color)
+        background var(--primary-background)
+        padding 0.75rem 0.75rem 0.5rem
+        &:focus
+          outline none
+          background var(--form-focus-color)
+          border 1px solid var(--form-focus-color)
+
+        &[type="radio"], &[type="checkbox"]
+          display grid
+          place-content center
+          font inherit
+          min-width 0
+          padding 0
+          appearance none
+          width 0.75rem
+          height 0.75rem
+          border 1px solid var(--neutral-accent)
+          background-color var(--background-color)
+          
+        &[type="checkbox"]
+          border-radius 0.25rem
+        &[type="radio"]
+          border-radius 50%
+
+        &[type="radio"]::before
+          content ""
+          width 0.25rem
+          height 0.25rem
+          background-color var(--primary-background)
+          border-radius 50%
+          transform scale(0)
+
+        &[type="radio"]:checked, &[type="checkbox"]:checked
+          background-color var(--primary-foreground)
+          border 1px solid var(--primary-foreground)
+
+        &[type="radio"]:checked::before
+          transform scale(1)
+
+        &[type="range"] 
+          -webkit-appearance none
+          appearance none
+          background transparent
+          cursor pointer
+          border none
+
+        &[type="file"] 
+          border none
+          width 100%
+          &:focus 
+            background none
+            border none
+
+        &[type="range"]:focus
+          outline none
+        
+        &[type="range"]::-webkit-slider-runnable-track
+          background var(--primary-accent)
+          height 0.5rem
+          border-radius 0.5rem
+
+        &[type="range"]::-moz-range-track
+          background var(--primary-accent)
+          height 0.5rem
+          border-radius 0.5rem
+
+        &[type="range"]::-webkit-slider-thumb
+          -webkit-appearance: none
+          appearance none
+          margin-top -4px
+          background-color var(--primary-foreground)
+          height 1rem
+          width 1rem
+          border-radius 50%
+
+        &[type="range"]::-moz-range-thumb
+          border none
+          border-radius 50%
+          background-color var(--primary-foreground)
+          height 1rem
+          width 1rem
+
+
+    .radio-group
+      display flex
+      flex-direction column
+      gap 0.5rem
+      p
+        font-size var(--smaller-copy-font-size)
+        line-height var(--smaller-copy-line-height)
+        margin 0
+        margin-left 1.5rem
