@@ -1,5 +1,31 @@
-@require reset
-@require normalize
-@require typography
-@require typography-elements
-@require forms
+// this is the same as document.styl right now
+// the idea is slim this down so that components
+// can load additional stuff when they want/need it
+@layer sites 
+  @require mixins
+  
+  @layer base
+    @require reset
+    @require normalize
+
+  @layer vocabulary
+    @require typography
+    @require variables
+
+  @layer block
+    @require block
+
+  @layer components
+    @require layout
+    @require typography-elements
+    @require types
+    @require forms
+
+  @layer classes
+    @require classes
+
+  @layer hints
+    @require hints
+
+  @layer media-queries
+    @require media-queries
