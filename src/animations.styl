@@ -1,0 +1,29 @@
+@keyframes spinner
+  0%
+    transform rotate(0deg)
+  100%
+    transform rotate(360deg)
+
+.loading, .waiting
+  row nowrap
+  justify-content center
+  align-items center
+
+  &::before
+    content ""
+
+    display inline-block
+    position relative
+    height 24px
+    width 24px
+
+    animation .6s linear infinite spinner
+
+    border 3px solid
+    border-top-color var(--primary-foreground)
+    border-right-color var(--primary-foreground)
+    border-left-color var(--primary-foreground)
+    border-bottom-color var(--primary-background)
+    border-radius 50%
+
+    opacity inherit

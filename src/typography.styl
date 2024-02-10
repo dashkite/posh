@@ -1,72 +1,49 @@
-// Adapted from Tailwind
-:root
+// default font
+html
+  font-family var(--copy-font, var(--heading-font, var(--base-font)))
 
-  // at the moment, smallest and smaller are the same
-  --smallest-copy-font-size 0.75rem
-  --smallest-copy-line-height 1rem
+h1, h2, h3, h4, h5, h6
+  font-weight bold
+  font-family var(--heading-font, var(--base-font))
+  min-width var(--heading-min-width, s("min(90vw, %s)", du(1)))
 
-  --smaller-copy-font-size 0.75rem
-  --smaller-copy-line-height 1rem
+h1
+  color var(--h1-color)
 
-  --small-copy-font-size 0.875rem
-  --small-copy-line-height 1.25rem
+h2, h3, h4, h5, h6
+  color var(--h2-h6-color)
 
-  --default-copy-font-size 1rem
-  --default-copy-line-height 1.5rem
+h1
+  font-size var(--first-level-heading-font-size)
+  line-height var(--first-level-heading-line-height)
+h2
+  font-size var(--second-level-heading-font-size)
+  line-height var(--second-level-heading-line-height)
+h3
+  font-size var(--third-level-heading-font-size)
+  line-height var(--third-level-heading-line-height)
 
-  --large-copy-font-size 1.25rem
-  --large-copy-line-height 1.75rem
+p, ul, ol, blockquote, .copy, input
+  color var(--neutral-foreground)
+  font-family var(--copy-font, var(--heading-font, var(--base-font)))
+  font-size var(--copy-font-size, 1rem)
+  line-height var(--copy-line-height, 1.5rem)
+  max-width var(--copy-max-width)
+  min-width var(--copy-min-width)
 
-  --larger-copy-font-size 1.75rem
-  --larger-copy-line-height 2.25rem
+h1, h2, h3, h4, h5, h6, p, li, blockquote, .copy, ul
+  text-align var(--text-align, left)
+  &:not(:first-child)
+    margin-top var(--copy-margin, 1rem)
 
-  --largest-copy-font-size 2.25rem
-  --largest-copy-line-height 2.75rem
+.hint
+  & > p
+    &:before
+      display inline-block
+      content "Hint: "
+      font-weight bold
+      margin-right 0.5em
+    display inline-block
 
-  --smallest-heading-font-size var(--default-copy-font-size)
-  --smallest-heading-line-height var(--default-copy-line-height)
-
-  --smaller-heading-font-size var(--default-copy-font-size)
-  --smaller-heading-line-height var(--default-copy-line-height)
-
-  --small-heading-font-size 1.25rem
-  --small-heading-line-height 1.75rem
-
-  --default-heading-font-size 1.5rem
-  --default-heading-line-height 2rem
-
-  --large-heading-font-size 1.875rem
-  --large-heading-line-height 2.25rem
-
-  --larger-heading-font-size 2.25rem
-  --larger-heading-line-height 2.5rem
-
-  --largest-heading-font-size s("min(16vw, 3rem)")
-  --largest-heading-line-height 1
-
-  --default-banner-font-size s("min(16vw, 3.75rem)")
-  --default-banner-line-height 1
-
-  --large-banner-font-size s("min(16vw, 4.5rem)")
-  --large-banner-line-height 1
-
-  --larger-banner-font-size s("min(16vw, 6rem)")
-  --larger-banner-line-height 1
-
-  --largest-banner-font-size s("min(16vw, 8rem)")
-  --largest-banner-line-height 1
-
-
-:root
-  --copy-font-size var(--default-copy-font-size)
-  --copy-line-height var(--default-copy-line-height)
-  --caption-font-size var(--small-copy-font-size)
-  --caption-line-height var(--small-copy-line-height)
-  --first-level-heading-font-size var(--larger-heading-font-size)
-  --first-level-heading-line-height var(--larger-heading-line-height)
-  --second-level-heading-font-size var(--large-heading-font-size)
-  --second-level-heading-line-height var(--large-heading-line-height)
-  --third-level-heading-font-size var(--default-heading-font-size)
-  --third-level-heading-line-height var(--default-heading-line-height)
-  --copy-max-width 72ch
-  --copy-min-width min(12rem, 100vw)
+.main
+  text-align var(--text-align, left)

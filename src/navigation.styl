@@ -1,0 +1,51 @@
+header > nav
+  display flex
+  gap 1rem
+  align-items baseline
+  justify-content end
+
+a
+  color var(--primary-highlight-foreground)
+
+.link
+  color var(--primary-highlight-foreground)
+  background-color var(--primary-background-color)
+  border none
+
+a, .link
+  display flex
+  align-items baseline
+  gap 1rem
+
+  i + *
+    margin-left -0.75rem
+
+
+// not sure what we're doing here
+// nav
+//   & > :not(a), & > a > *
+//     display var(--block-child-display)
+//     flex-direction var(--block-child-flex-direction)
+//     flex-wrap var(--block-child-flex-wrap)
+//     justify-content var(--block-child-justify-content)
+//     align-items var(--block-child-align-items)
+//     gap var(--block-child-gap)
+
+//     flex-grow var(--block-child-flex-grow)
+//     flex-shrink var(--block-child-flex-shrink)
+//     flex-basis var(--block-child-flex-basis)
+//     max-width var(--block-child-max-width)
+//     max-height var(--block-child-max-height)
+//     height var(--block-child-height)
+//     width var(--block-child-width)
+//     border var(--block-child-border)
+//     padding var(--block-child-padding)
+//     border-radius var(--block-child-border-radius)
+//     box-shadow var(--block-child-box-shadow)
+
+//     h1, h2
+//       font-size var(--first-level-heading-font-size)
+//       line-height var(--first-level-heading-line-height)
+//     h1 ~ h2, h3
+//       font-size var(--second-level-heading-font-size)
+//       line-height var(--second-level-heading-line-height)
