@@ -1,3 +1,5 @@
+@require "../mixins"
+
 body
   width 100vw
   height 100dvh
@@ -9,8 +11,14 @@ body
   color var(--primary-foreground)
   background-color var(--primary-background)
 
-  & > header
+  & > header, & > footer
     // TODO why can't this be a percentage?
     width 100vw
     padding 1rem
+    
+  & > header
     border-block-end 1px solid var(--primary-accent)
+
+  & > footer
+    border-block-start 1px solid var(--primary-accent)
+    smallest()
