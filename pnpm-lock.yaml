@@ -29,6 +29,9 @@ devDependencies:
   '@dashkite/genie-stylus':
     specifier: link:../genie-stylus
     version: link:../genie-stylus
+  '@dashkite/genie-watch':
+    specifier: link:../genie-watch
+    version: link:../genie-watch
 
 packages:
 
