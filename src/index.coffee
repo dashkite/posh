@@ -3,6 +3,7 @@ import normalize from "./normalize"
 import typography from "./typography"
 import forms from "./forms"
 import component from "./component"
+import animations from "./animations"
 
 icons = "https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
 
@@ -13,5 +14,6 @@ export {
   typography
   forms
   component
+  animations
   icons
 }

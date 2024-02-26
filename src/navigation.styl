@@ -2,7 +2,6 @@ header > nav
   display flex
   gap 1rem
   align-items baseline
-  justify-content end
 
 a, a:visited, a:hover
   color var(--primary-highlight-foreground)
@@ -12,13 +11,11 @@ a, a:visited, a:hover
   background-color var(--primary-background-color)
   border none
 
-a, .link
-  display flex
-  align-items baseline
-  gap 1rem
-
-  i + *
-    margin-left -0.75rem
+// nav
+//   & > a, & > .link
+//     display flex
+//     align-items baseline
+//     gap 0.25rem
 
 
 // not sure what we're doing here
