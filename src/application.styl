@@ -10,3 +10,16 @@
   @require typography
   @require layout
   @require navigation
+
+// where does this belong?
+*::part(header)
+  --first-level-heading-font-size var(--second-level-heading-font-size)
+
+*::part(header-2)
+  --first-level-heading-font-size var(--third-level-heading-font-size)
+
+*::part(header-3)
+  --first-level-heading-font-size var(--fourth-level-heading-font-size)
+
+*::part(header-4)
+  --first-level-heading-font-size var(--fifth-level-heading-font-size)
