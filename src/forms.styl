@@ -16,6 +16,7 @@ form
     p
       smaller()
 
+  // TODO styling for drop-down
   .field
 
     display flex
@@ -23,8 +24,12 @@ form
     gap 0.5rem
     width 20rem
 
-    &.radio-container
+    div:has(> input[type='radio'])
+      margin-inline-start 1rem
+      display flex
       gap 1rem
+      align-items center
+
 
     & > span
       font-weight bold
@@ -35,11 +40,6 @@ form
       display flex
       flex-direction column
       margin -0.25rem
-
-      &.radio
-        flex-direction row
-        gap 0.5rem
-        align-items center
 
       & > *
         margin 0.25rem
@@ -82,8 +82,8 @@ form
           appearance none
           width 0.75rem
           height 0.75rem
-          border 1px solid var(--neutral-accent)
-          background-color var(--background-color)
+          border 1px solid var(--primary-accent)
+          background-color var(--primary-background)
           
         &[type="checkbox"]
           border-radius 0.25rem
