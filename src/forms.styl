@@ -24,6 +24,11 @@ form
     gap 0.5rem
     width 20rem
 
+    // & > .hint
+    
+    & > .error
+      color var(--primary-warning)
+
     div:has(> input[type='radio'])
       margin-inline-start 1rem
       display flex
@@ -66,6 +71,9 @@ form
         display inline-block
         border-radius 0.5rem
         border 1px solid var(--form-border-color)
+        &:invalid
+          border 1px solid var(--primary-warning)
+          
         background var(--primary-background)
         padding 0.75rem 0.75rem 0.5rem
         &:focus
