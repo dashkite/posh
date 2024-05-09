@@ -1,3 +1,5 @@
+@require mixins
+
 @layer base
   @require reset
   @require normalize
@@ -6,10 +8,11 @@
   @require "vocabulary/typography"
 
 @layer universal
-  @require "layouts/basic"
+  @require color
   @require typography
   @require layout
   @require navigation
+  @require "layouts/simple"
 
 // where does this belong?
 *::part(header)

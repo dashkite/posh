@@ -1,0 +1,16 @@
+html
+  
+  --primary-foreground var(--light-primary-foreground)
+  --primary-background var(--light-primary-background)
+  --primary-accent var(--light-primary-accent)
+  --primary-highlight var(--light-primary-highlight)
+
+  @media (prefers-color-scheme: dark)
+    --primary-foreground var(--dark-primary-foreground)
+    --primary-background var(--dark-primary-background)
+    --primary-accent var(--dark-primary-accent)
+    --primary-highlight var(--dark-primary-highlight)
+
+body
+  color var(--primary-foreground)
+  background var(--primary-background)
