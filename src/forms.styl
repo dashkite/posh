@@ -1,168 +1,183 @@
+@require "mixins/dimension"
+@require "mixins/typography"
+
 form
+
+  --form-border var(--highlight)
+  --form-focus var(--highlight)
+  --form-autofill var(--highlight)
+
   display flex
   flex-direction column
   gap 3rem
+
+  & > footer
+    display flex
+    justify-content end
+    gap 1rem
+    border-top 1px solid var(--accent)
+    padding-block-start 1rem
+    padding-inline 1rem
 
   & > div
     display flex
     flex-direction column
     gap 2rem
 
-  footer
-    width 20rem
-    border-top 1px solid var(--primary-accent)
-    padding-block-start 1rem
-    padding-inline 1rem
-    p
-      smaller()
 
-  // TODO styling for drop-down
-  .field
+    & > .field
 
-    display flex
-    flex-direction column
-    gap 0.5rem
-    width 20rem
-
-    // & > .hint
-    
-    & > .error
-      color var(--primary-warning)
-
-    div:has(> input[type='radio'])
-      margin-inline-start 1rem
-      display flex
-      gap 1rem
-      align-items center
-
-
-    & > span
-      font-weight bold
-      display block
-      margin-right 0.5rem
-
-    label
-      display flex
-      flex-direction column
-      margin -0.25rem
-
-      & > *
-        margin 0.25rem
-
-      span
-        font-weight bold
-        display block
-        margin-right 0.5rem
-
-      textarea
-        width du(1)
-        height vu(0.5)
-        padding 0.75rem 0.75rem 0.5rem
-        border-radius 0.5rem
-        border 1px solid var(--form-border-color)
-        max-width du(2)
-        max-height vu(3)
-        &:focus
-          outline none
-          // background var(--form-focus-color)
-          border 1px solid var(--form-focus-color)
-
-      input
-        display inline-block
-        border-radius 0.5rem
-        border 1px solid var(--form-border-color)
-        &:invalid
-          border 1px solid var(--primary-warning)
-          
-        background var(--primary-background)
-        padding 0.75rem 0.75rem 0.5rem
-        &:focus
-          outline none
-          // background var(--form-focus-color)
-          border 1px solid var(--form-focus-color)
-
-        &[type="radio"], &[type="checkbox"]
-          display grid
-          place-content center
-          font inherit
-          min-width 0
-          padding 0
-          appearance none
-          width 0.75rem
-          height 0.75rem
-          border 1px solid var(--primary-accent)
-          background-color var(--primary-background)
-          
-        &[type="checkbox"]
-          border-radius 0.25rem
-        &[type="radio"]
-          border-radius 50%
-
-        &[type="radio"]::before
-          content ""
-          width 0.25rem
-          height 0.25rem
-          background-color var(--primary-background)
-          border-radius 50%
-          transform scale(0)
-
-        &[type="radio"]:checked, &[type="checkbox"]:checked
-          background-color var(--primary-foreground)
-          border 1px solid var(--primary-foreground)
-
-        &[type="radio"]:checked::before
-          transform scale(1)
-
-        &[type="range"] 
-          -webkit-appearance none
-          appearance none
-          background transparent
-          cursor pointer
-          border none
-
-        &[type="file"] 
-          border none
-          width 100%
-          &:focus 
-            background none
-            border none
-
-        &[type="range"]:focus
-          outline none
-        
-        &[type="range"]::-webkit-slider-runnable-track
-          background var(--primary-accent)
-          height 0.5rem
-          border-radius 0.5rem
-
-        &[type="range"]::-moz-range-track
-          background var(--primary-accent)
-          height 0.5rem
-          border-radius 0.5rem
-
-        &[type="range"]::-webkit-slider-thumb
-          -webkit-appearance: none
-          appearance none
-          margin-top -4px
-          background-color var(--primary-foreground)
-          height 1rem
-          width 1rem
-          border-radius 50%
-
-        &[type="range"]::-moz-range-thumb
-          border none
-          border-radius 50%
-          background-color var(--primary-foreground)
-          height 1rem
-          width 1rem
-
-
-    .radio-group
       display flex
       flex-direction column
       gap 0.5rem
-      p
-        font-size var(--smaller-copy-font-size)
-        line-height var(--smaller-copy-line-height)
-        margin 0
-        margin-left 1.5rem
+      width 20rem
+
+      // & > .hint
+      
+      div:has(> input[type='radio'])
+        margin-inline-start 1rem
+        display flex
+        gap 1rem
+        align-items center
+
+
+      & > label
+        display flex
+        flex-direction column
+        margin -0.25rem
+
+        & > *
+          margin 0.25rem
+
+        & > span:first-child
+          font-weight bold
+          display block
+
+        & > .error
+          smaller()
+          font-size var(--copy-font-size)
+          color var(--warning)
+          min-height var(--copy-line-height)
+
+        & > textarea
+          width du(1)
+          height vu(0.5)
+          padding 0.75rem 0.75rem 0.5rem
+          border-radius 0.5rem
+          border 1px solid var(--form-border)
+          max-width du(2)
+          max-height vu(3)
+          &:focus
+            outline none
+            // background var(--form-focus-color)
+            border 1px solid var(--form-focus)
+          font-family var(--monospace-font)
+
+        & > input
+          display inline-block
+          border-radius 0.5rem
+          border 1px solid var(--form-border)
+          &:invalid
+            border 1px solid var(--warning)
+            
+          background-color var(--background)
+          padding 0.75rem 0.75rem 0.5rem
+          &:focus
+            outline none
+            // background var(--form-focus-color)
+            border 1px solid var(--form-focus)
+
+          // hack to override chrome's default autofill
+          // which can't otherwise be overriden (wtf)
+          // https://issues.chromium.org/issues/40408794#comment77
+          &:autofill
+            background-color var(--form-autofill)
+            box-shadow 0 0 0 1.5rem var(--form-autofill) inset
+
+          font-family var(--monospace-font)
+
+          &[type="radio"], &[type="checkbox"]
+            display grid
+            place-content center
+            font inherit
+            min-width 0
+            padding 0
+            appearance none
+            width 0.75rem
+            height 0.75rem
+            border 1px solid var(--accent)
+            background-color var(--background)
+            
+          &[type="checkbox"]
+            border-radius 0.25rem
+          &[type="radio"]
+            border-radius 50%
+
+          &[type="radio"]::before
+            content ""
+            width 0.25rem
+            height 0.25rem
+            background-color var(--background)
+            border-radius 50%
+            transform scale(0)
+
+          &[type="radio"]:checked, &[type="checkbox"]:checked
+            background-color var(--foreground)
+            border 1px solid var(--foreground)
+
+          &[type="radio"]:checked::before
+            transform scale(1)
+
+          &[type="range"] 
+            -webkit-appearance none
+            appearance none
+            background transparent
+            cursor pointer
+            border none
+
+          &[type="file"] 
+            border none
+            width 100%
+            &:focus 
+              background none
+              border none
+
+          &[type="range"]:focus
+            outline none
+          
+          &[type="range"]::-webkit-slider-runnable-track
+            background var(--accent)
+            height 0.5rem
+            border-radius 0.5rem
+
+          &[type="range"]::-moz-range-track
+            background var(--accent)
+            height 0.5rem
+            border-radius 0.5rem
+
+          &[type="range"]::-webkit-slider-thumb
+            -webkit-appearance: none
+            appearance none
+            margin-top -4px
+            background-color var(--foreground)
+            height 1rem
+            width 1rem
+            border-radius 50%
+
+          &[type="range"]::-moz-range-thumb
+            border none
+            border-radius 50%
+            background-color var(--foreground)
+            height 1rem
+            width 1rem
+
+
+      .radio-group
+        display flex
+        flex-direction column
+        gap 0.5rem
+        p
+          font-size var(--smaller-copy-font-size)
+          line-height var(--smaller-copy-line-height)
+          margin 0
+          margin-left 1.5rem

@@ -1,0 +1,26 @@
+/*
+
+du - device units
+
+- multiple of the smallest theoretical device
+- expressed in pixels instead of rem
+  b/c the viewport doesn't grow or shrink
+  in proportion to the default font size
+
+vu - vertical units
+
+- expressed in smaller increments than du,
+  which are typically horizontal, since
+  device widths vary much more than heights
+- we use pixels to be consistent with du
+- the choice of 192px (12 rem) is mostly 
+  just based on experience
+
+*/
+
+du(n)
+  unquote(s("calc(320px * %s)", n))
+
+vu(n)
+  unquote(s("calc(192px * %s)", n))
+

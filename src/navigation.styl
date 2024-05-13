@@ -4,11 +4,11 @@ header > nav
   align-items baseline
 
 a, a:visited, a:hover
-  color var(--primary-highlight-foreground)
+  color var(--highlight)
 
 .link
-  color var(--primary-highlight-foreground)
-  background-color var(--primary-background)
+  color var(--highlight)
+  background-color var(--background)
   border none
 
 button
@@ -16,11 +16,15 @@ button
   justify-content center
   padding-block 0.5rem 
   padding-inline 0.75rem
-  color var(--primary-background)
-  background-color var(--primary-highlight-foreground)
-  border 1px solid var(--primary-accent)
+  color var(--background)
+  background-color var(--highlight)
+  border 1px solid var(--highlight)
   border-radius 0.5rem
   min-width 8rem
+
+  &:focus-visible
+    outline 1px solid var(--accent)
+    outline-offset 1px
 
 // nav
 //   & > a, & > .link

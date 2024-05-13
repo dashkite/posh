@@ -1,40 +1,3 @@
-/*
-
-du - device units
-
-- multiple of the smallest theoretical device
-- expressed in pixels instead of rem
-  b/c the viewport doesn't grow or shrink
-  in proportion to the default font size
-
-vu - vertical units
-
-- expressed in smaller increments than du,
-  which are typically horizontal, since
-  device widths vary much more than heights
-- we use pixels to be consistent with du
-- the choice of 192px (12 rem) is mostly 
-  just based on experience
-
-*/
-
-du(n)
-  unquote(s("calc(320px * %s)", n))
-
-vu(n)
-  unquote(s("calc(192px * %s)", n))
-
-copy()
-  font-size var(--copy-font-size)
-  line-height var(--copy-line-height)
-  max-width var(--copy-max-width)
-  color var(--neutral-foreground)
-
-caption()
-  font-size var(--caption-font-size)
-  line-height var(--caption-line-height)
-  max-width var(--copy-max-width)
-  color var(--neutral-foreground)
 
 narrow()
   --block-child-max-width du(3)
@@ -122,13 +85,4 @@ vertical()
 shadow()
   --block-child-box-shadow 0.5rem 0.5rem 0.5rem var(--border-color)
 
-highlight()
-  --h2-h6-color var(--primary-foreground)
-  --border-color var(--primary-foreground)
-  --nav-color var(--primary-foreground)
-  --icon-color var(--primary-foreground)
-
-neutral()
-  --h1-color var(--neutral-foreground)
-  --border-color var(--neutral-accent)
 

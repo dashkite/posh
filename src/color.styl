@@ -1,3 +1,7 @@
+// TODO add support for secondary, tertiary schemes
+// TODO add mixins to generate properties for schemes
+//      ex: secondary()
+
 html
   
   --primary-foreground var(--light-primary-foreground)
@@ -11,6 +15,17 @@ html
     --primary-accent var(--dark-primary-accent)
     --primary-highlight var(--dark-primary-highlight)
 
+  --foreground var(--primary-foreground)
+  --background var(--primary-background)
+  --accent var(--primary-accent)
+  --highlight var(--primary-highlight)
+
+  @css {
+    html {
+      --warning: color-mix(in lch, var(--highlight), red 25%);
+    }
+  }
+
 body
-  color var(--primary-foreground)
-  background var(--primary-background)
+  color var(--foreground)
+  background var(--background)
