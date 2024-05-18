@@ -32,8 +32,6 @@ form
       gap 0.5rem
       width 20rem
 
-      // & > .hint
-      
       div:has(> input[type='radio'])
         margin-inline-start 1rem
         display flex
@@ -53,8 +51,12 @@ form
           font-weight bold
           display block
 
+        & > .hint
+          small()
+          font-size var(--copy-font-size)
+
         & > .error
-          smaller()
+          small()
           font-size var(--copy-font-size)
           color var(--warning)
           min-height var(--copy-line-height)
