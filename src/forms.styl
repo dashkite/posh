@@ -11,6 +11,9 @@ form
   flex-direction column
   gap 3rem
 
+  font-size var(--copy-font-size)
+  line-height var(--copy-line-height)
+
   & > footer
     display flex
     justify-content end
@@ -22,8 +25,7 @@ form
   & > div
     display flex
     flex-direction column
-    gap 2rem
-
+    gap 1em
 
     & > .field
 
@@ -32,17 +34,67 @@ form
       gap 0.5rem
       width 20rem
 
-      div:has(> input[type='radio'])
-        margin-inline-start 1rem
-        display flex
-        gap 1rem
-        align-items center
-
-
       & > label
         display flex
         flex-direction column
         margin -0.25rem
+
+        & > label:has(> input[type="checkbox"])
+          margin-inline-start 1rem
+          display flex
+          gap 1rem
+          align-items center
+          
+          & > input[type="checkbox"]
+            display grid
+            place-content center
+            font inherit
+            min-width 0
+            padding 0
+            appearance none
+            width 0.75rem
+            height 0.75rem
+            border 1px solid var(--accent)
+            background-color var(--background)
+            border-radius 0.25rem
+
+            &:checked
+              background-color var(--highlight)
+              border 1px solid var(--highlight)
+
+        & > label:has(> input[type='radio'])
+          margin-inline-start 1rem
+          display flex
+          gap 1rem
+          align-items center
+
+          & > input[type="radio"]
+            display grid
+            place-content center
+            font inherit
+            min-width 0
+            padding 0
+            appearance none
+            width 0.75rem
+            height 0.75rem
+            border 1px solid var(--accent)
+            background-color var(--background)
+            border-radius 50%
+
+            &::before
+              content ""
+              width 0.25rem
+              height 0.25rem
+              background-color var(--background)
+              border-radius 50%
+              transform scale(0)
+
+            &:checked
+              background-color var(--highlight)
+              border 1px solid var(--highlight)
+
+            &:checked::before
+              transform scale(1)
 
         & > *
           margin 0.25rem
@@ -51,9 +103,36 @@ form
           font-weight bold
           display block
 
+        // & > .hint
+        //   small()
+        //   display list-item
+        //   font-size var(--copy-font-size)
+        //   margin-inline-start 1rem
+        //   padding-inline-start 0.5em
+
+        //   &::marker
+        //     font-family "remixicon"
+        //     content: "\F045"
+        //     color var(--highlight)
+
         & > .hint
-          small()
-          font-size var(--copy-font-size)
+          & > summary
+            font-weight bold
+            display block
+            list-style none
+            &::-webkit-details-marker
+              display none
+            
+            &::after
+              margin-inline-start 0.5rem
+              font-family "remixicon"
+              content "\F045"
+              font-size 1.5em
+              color var(--accent)
+
+            & + *
+              margin-block-start 0.5rem
+              font-style italic
 
         & > .error
           small()
@@ -98,45 +177,76 @@ form
 
           font-family var(--monospace-font)
 
-          &[type="radio"], &[type="checkbox"]
-            display grid
-            place-content center
-            font inherit
-            min-width 0
-            padding 0
-            appearance none
-            width 0.75rem
-            height 0.75rem
-            border 1px solid var(--accent)
-            background-color var(--background)
-            
-          &[type="checkbox"]
-            border-radius 0.25rem
-          &[type="radio"]
-            border-radius 50%
+        & > div:has(> input[type="range"])
+          display flex
+          flex-direction column
 
-          &[type="radio"]::before
-            content ""
-            width 0.25rem
-            height 0.25rem
-            background-color var(--background)
-            border-radius 50%
-            transform scale(0)
-
-          &[type="radio"]:checked, &[type="checkbox"]:checked
-            background-color var(--foreground)
-            border 1px solid var(--foreground)
-
-          &[type="radio"]:checked::before
-            transform scale(1)
-
-          &[type="range"] 
+          & > input[type="range"] 
+            order 1
             -webkit-appearance none
             appearance none
             background transparent
             cursor pointer
             border none
+            flex 1 1 auto
 
+            &::-webkit-slider-runnable-track
+              background var(--accent)
+              height 0.5rem
+              border-radius 0.5rem
+
+            &::-moz-range-track
+              background var(--accent)
+              height 0.5rem
+              border-radius 0.5rem
+
+            &::-webkit-slider-thumb
+              -webkit-appearance: none
+              appearance none
+              margin-top -4px
+              background-color var(--foreground)
+              height 1rem
+              width 1rem
+              border-radius 50%
+
+            &::-moz-range-thumb
+              border none
+              border-radius 50%
+              background-color var(--foreground)
+              height 1rem
+              width 1rem
+
+          & > datalist
+            order 2
+            flex 1 1 auto
+            display flex
+            justify-content space-between
+
+            & > option
+              display none
+              &:first-child, &:last-child
+                display inline
+              
+
+          // &[type="radio"]
+          //   border-radius 50%
+
+          // &[type="radio"]::before
+          //   content ""
+          //   width 0.25rem
+          //   height 0.25rem
+          //   background-color var(--background)
+          //   border-radius 50%
+          //   transform scale(0)
+
+          // &[type="radio"]:checked, &[type="checkbox"]:checked
+          //   background-color var(--foreground)
+          //   border 1px solid var(--foreground)
+
+          // &[type="radio"]:checked::before
+          //   transform scale(1)
+
+          
           &[type="file"] 
             border none
             width 100%
@@ -147,31 +257,6 @@ form
           &[type="range"]:focus
             outline none
           
-          &[type="range"]::-webkit-slider-runnable-track
-            background var(--accent)
-            height 0.5rem
-            border-radius 0.5rem
-
-          &[type="range"]::-moz-range-track
-            background var(--accent)
-            height 0.5rem
-            border-radius 0.5rem
-
-          &[type="range"]::-webkit-slider-thumb
-            -webkit-appearance: none
-            appearance none
-            margin-top -4px
-            background-color var(--foreground)
-            height 1rem
-            width 1rem
-            border-radius 50%
-
-          &[type="range"]::-moz-range-thumb
-            border none
-            border-radius 50%
-            background-color var(--foreground)
-            height 1rem
-            width 1rem
 
 
       .radio-group
