@@ -118,11 +118,12 @@ form
 
         & > .hint
           & > summary
-            font-weight bold
             display block
             list-style none
             &::-webkit-details-marker
               display none
+            font-weight bold
+            text-transform capitalize
             
             &::after
               margin-inline-start 0.5rem
@@ -143,18 +144,21 @@ form
           min-height var(--copy-line-height)
 
         & > textarea
-          width du(1)
-          height vu(0.5)
           padding 0.75rem 0.75rem 0.5rem
           border-radius 0.5rem
           border 1px solid var(--form-border)
+          color var(--foreground)
+          background var(--background)
           max-width du(2)
-          max-height vu(3)
           &:focus
             outline none
             // background var(--form-focus-color)
             border 1px solid var(--form-focus)
           font-family var(--monospace-font)
+
+          &.long
+            height s("calc(var(--copy-line-height) * 12)")
+            
 
         & > input
           display inline-block
