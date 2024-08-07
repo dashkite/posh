@@ -252,16 +252,17 @@ form
           // &[type="radio"]:checked::before
           //   transform scale(1)
 
-          
-          &[type="file"] 
-            border none
-            width 100%
-            &:focus 
-              background none
-              border none
+      label:has(> input[type="file"])
+        border none
+        width 100%
+        &:focus 
+          background none
+          border none
+        & > input
+          display none
 
-          &[type="range"]:focus
-            outline none
+      &[type="range"]:focus
+        outline none
           
 
 
