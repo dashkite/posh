@@ -16,7 +16,7 @@ build/browser/src/forms.js: OzJ5p2UQ
 build/browser/src/classes.css: JOTu85dH
 build/browser/src/lexicon/typography.css: afuRim9c
 build/browser/src/component.css: hO7ZTeg2
-build/browser/src/index.js: StaZqVSY
+build/browser/src/index.js: x1qxKHe1
 build/browser/src/reset.css: NzAi3f8y
 build/browser/src/media-queries.css: 3WT32Xj5
 build/browser/src/normalize.js: jNpnJEON
@@ -43,3 +43,5 @@ build/browser/src/lexicon/typography.js: PP-Be6Ts
 build/browser/src/types.js: 3jG-sF57
 build/browser/src/types.css: Qro44-GS
 build/browser/src/application.js: DolMW2hy
+build/browser/src/compact.js: ZWsN7_KW
+build/browser/src/compact.css: QZrCxpzC

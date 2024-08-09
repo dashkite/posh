@@ -4,6 +4,7 @@ import typography from "./typography"
 import forms from "./forms"
 import component from "./component"
 import animations from "./animations"
+import compact from "./compact"
 
 icons = "https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
 
@@ -16,4 +17,5 @@ export {
   component
   animations
   icons
+  compact
 }
