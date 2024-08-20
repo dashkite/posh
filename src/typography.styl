@@ -31,7 +31,7 @@ h3
   font-size var(--third-level-heading-font-size)
   line-height var(--third-level-heading-line-height)
 
-p, ul, ol, blockquote, .copy, input
+p, ul, ol, blockquote, .copy
   color var(--neutral-foreground)
   font-family var(--copy-font, var(--heading-font, var(--base-font)))
   font-size var(--copy-font-size, 1rem)
@@ -43,15 +43,6 @@ h1, h2, h3, h4, h5, h6, p, li, blockquote, .copy, ul
   text-align var(--text-align, left)
   &:not(:first-child)
     margin-top var(--copy-margin)
-
-.hint
-  & > p
-    &:before
-      display inline-block
-      content "Hint: "
-      font-weight bold
-      margin-right 0.5em
-    display inline-block
 
 .main
   text-align var(--text-align, left)

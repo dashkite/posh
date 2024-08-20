@@ -9,7 +9,7 @@ form
 
   display flex
   flex-direction column
-  gap 3rem
+  gap 2rem
 
   // TODO is there a better way to do this?
   //      value is set to whatever the property
@@ -27,17 +27,22 @@ form
     padding-inline 1rem
 
   & > div
-    display flex
-    flex-direction row
-    flex-wrap wrap
+    display grid
+    grid-auto-flow row dense
+    grid-template-columns repeat(auto-fit, minmax(9rem, 1fr))
     gap 1em
+
+    & > :not(.field)
+      grid-column span 2
 
 .field
 
   display flex
   flex-direction column
   gap 0.5rem
-  flex 1 1 s("calc(50% - 0.5rem)")
+
+  &.text, &.custom
+    grid-column span 2
 
   & > label
     display flex
@@ -153,7 +158,7 @@ form
       border 1px solid var(--form-border)
       color var(--foreground)
       background var(--background)
-      max-width du(2)
+      max-width var(--copy-max-width)
       &:focus
         outline none
         // background var(--form-focus-color)
@@ -180,7 +185,7 @@ form
       border 1px solid var(--form-border)
       &:invalid
         border 1px solid var(--warning)
-        
+      color var(--foreground)    
       background-color var(--background)
       padding 0.75rem 0.75rem 0.5rem
       &:focus
