@@ -1,10 +1,16 @@
-coffee:
-  targets:
-    - browser
-
 stylus:
   targets:
+
     browser:
+      - preset: css
+        glob:
+          - src/**/*.styl
+
+      - preset: js
+        glob:
+          - src/**/*.styl
+
+    node:
       - preset: css
         glob:
           - src/**/*.styl

@@ -1,88 +1,87 @@
-
-narrow()
-  --block-child-max-width du(3)
-
-narrower()
-  --block-child-max-width du(2)
+@require "./dimension"
 
 narrowest()
-  --block-child-max-width du(1)
-  --copy-min-width 0
-  --heading-min-width 0
+  --child-max-inline-size 4rem
 
-wide()
-  --block-flex-grow 1
-  --block-flex-basis 25%
+narrower()
+  --child-max-inline-size 8rem
 
-wider()
-  --block-flex-grow 2
-  --block-flex-basis 33.33%
+narrow()
+  --child-max-inline-size 12rem
 
-widest()
-  --block-flex-basis 100%
+// wide()
+//   --block-flex-grow 1
+//   --block-max-inline-size 25%
 
-left()
-  --block-justify-content flex-start
-  --block-child-justify-content flex-start
-  --text-align left
+// wider()
+//   --block-flex-grow 2
+//   --block-flex-basis 33.33%
 
+// widest()
+//   --block-flex-basis 100%
 
-right()
-  --block-justify-content flex-end
-  --block-child-justify-content flex-end
-  --text-align right
+// left()
+//   --block-justify-content flex-start
+//   --block-child-justify-content flex-start
+//   --text-align left
 
 
-center()
-  --block-justify-content center
-  --block-child-justify-content center
-  --block-child-align-items center
-  --text-align center
+// right()
+//   --block-justify-content flex-end
+//   --block-child-justify-content flex-end
+//   --text-align right
 
-round_()
-  //!important is needed to overwrite --border-radius in .border
-  --border-radius 0.5rem !important
-  --block-img-object-fit cover
 
-rounder()
-  //!important is needed to overwrite --border-radius in .border
-  --border-radius 1rem !important
-  --block-img-object-fit cover
+// center()
+//   --block-justify-content center
+//   --block-child-justify-content center
+//   --block-child-align-items center
+//   --text-align center
 
-roundest()
-  //!important is needed to overwrite --border-radius in .border
-  --border-radius 1.5rem !important
-  --block-img-object-fit cover
+// round_()
+//   //!important is needed to overwrite --border-radius in .border
+//   --border-radius 0.5rem !important
+//   --block-img-object-fit cover
 
-circular()
-  //!important is needed to overwrite --border-radius in .border
-  --border-radius 9999px !important
-  --block-img-object-fit cover
+// rounder()
+//   //!important is needed to overwrite --border-radius in .border
+//   --border-radius 1rem !important
+//   --block-img-object-fit cover
 
-vertical()
-  --block-child-flex-direction column
-  --block-child-flex-wrap nowrap
+// roundest()
+//   //!important is needed to overwrite --border-radius in .border
+//   --border-radius 1.5rem !important
+//   --block-img-object-fit cover
 
-horizontal()
-  --block-child-flex-direction row
-  --block-child-flex-wrap wrap
+// circular()
+//   //!important is needed to overwrite --border-radius in .border
+//   --border-radius 9999px !important
+//   --block-img-object-fit cover
 
-reverse()
-  --section-aside-float left
-  --section-aside-margin-left none
-  --section-aside-margin-right 1rem
+// vertical()
+//   --block-child-flex-direction column
+//   --block-child-flex-wrap nowrap
 
-borders()
-  --block-child-border 1px solid var(--border-color)
-  --border-radius 0
-  --block-child-padding 1rem
+// horizontal()
+//   --block-child-flex-direction row
+//   --block-child-flex-wrap wrap
 
-vertical()
-  --section-aside-float none
-  --section-aside-margin-left none
-  --section-aside-margin-right none
+// reverse()
+//   --section-aside-float left
+//   --section-aside-margin-left none
+//   --section-aside-margin-right 1rem
 
-shadow()
-  --block-child-box-shadow 0.5rem 0.5rem 0.5rem var(--border-color)
+// borders()
+//   --block-child-border 1px solid var(--border-color)
+//   --border-radius 0
+//   --block-child-padding 1rem
+
+// vertical()
+//   --section-aside-float none
+//   --section-aside-margin-left none
+//   --section-aside-margin-right none
+
+// shadow()
+//   --block-child-box-shadow 0.5rem 0.5rem 0.5rem var(--border-color)
 
 
