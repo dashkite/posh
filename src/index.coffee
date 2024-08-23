@@ -1,6 +1,7 @@
 import reset from "./reset"
 import normalize from "./normalize"
 import typography from "./typography"
+import color from "./color"
 import forms from "./forms"
 import component from "./component"
 import animations from "./animations"
@@ -15,6 +16,7 @@ export {
   reset
   normalize
   typography
+  color
   forms
   component
   animations

@@ -2,7 +2,7 @@
 // TODO add mixins to generate properties for schemes
 //      ex: secondary()
 
-:root
+:root, :host
   
   --primary-foreground var(--light-primary-foreground)
   --primary-background var(--light-primary-background)
@@ -29,6 +29,6 @@
     }
   }
 
-body
-  color var(--foreground)
-  background var(--background)
+  body, .body
+    color var(--foreground)
+    background var(--background)
