@@ -1,4 +1,5 @@
 @require "mixins/dimension"
+@require "mixins/typography"
 
 // default font
 :root
@@ -31,20 +32,13 @@ h3
   font-size var(--third-level-heading-font-size)
   line-height var(--third-level-heading-line-height)
 
-header
+main, form
   container-type inline-size
 
 @container (max-inline-size: 20rem)
-  h1
-    font-size var(--second-level-heading-font-size)
-    line-height var(--second-level-heading-line-height)
-  h2
-    font-size var(--third-level-heading-font-size)
-    line-height var(--third-level-heading-line-height)
-  h3
-    font-size var(--fourth-level-heading-font-size)
-    line-height var(--fourth-level-heading-line-height)
-
+  header
+    small()
+  
 p, ul, ol, blockquote, .copy
   color var(--neutral-foreground)
   font-family var(--copy-font, var(--heading-font, var(--base-font)))
