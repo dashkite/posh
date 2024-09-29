@@ -31,14 +31,11 @@ form
     grid-template-columns repeat(auto-fit, minmax(8rem, 1fr))
     gap 1em
 
-.field
+main, .field
 
   display flex
   flex-direction column
   gap 0.5rem
-
-  &.text, &.custom
-    grid-column span 2
 
   & > label
     display flex
@@ -122,6 +119,9 @@ form
     //     color var(--highlight)
 
     & > .hint
+      // display none
+      // &:has(::slotted([name="hint"]))
+      //   display block
       & > summary
         display block
         list-style none
