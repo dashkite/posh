@@ -3,7 +3,9 @@
 
 // default font
 :root
-  font-family var(--copy-font, var(--heading-font, var(--base-font)))
+  --copy-font var(--base-font)
+  --heading-font var(--base-font)
+  font-family var(--copy-font)
   font-size var(--copy-font-size, 1rem)
   line-height var(--copy-line-height, 1.5rem)
 
@@ -41,7 +43,7 @@ main, form
   
 p, ul, ol, blockquote, .copy
   color var(--neutral-foreground)
-  font-family var(--copy-font, var(--heading-font, var(--base-font)))
+  font-family var(--copy-font, var(--base-font))
   font-size var(--copy-font-size, 1rem)
   line-height var(--copy-line-height, 1.5rem)
   max-width var(--copy-max-width)
