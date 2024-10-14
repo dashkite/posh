@@ -49,10 +49,20 @@ p, ul, ol, blockquote, .copy
   max-width var(--copy-max-width)
   min-width var(--copy-min-width)
 
-h1, h2, h3, h4, h5, h6, p, li, blockquote, .copy, ul
-  text-align var(--text-align, left)
-  &:not(:first-child)
+article, section
+
+  h1, h2, h3, h4, h5, h6, p, li, blockquote, .copy, ul
+    text-align var(--text-align, left)
+    &:not(:first-child)
+      margin-top var(--copy-margin)
+
+  header + main
     margin-top var(--copy-margin)
 
-.main
-  text-align var(--text-align, left)
+  p, ul, ol, blockquote, .copy
+    color var(--neutral-foreground)
+    font-family var(--copy-font, var(--base-font))
+    font-size var(--copy-font-size, 1rem)
+    line-height var(--copy-line-height, 1.5rem)
+    max-width var(--copy-max-width)
+    min-width var(--copy-min-width)
