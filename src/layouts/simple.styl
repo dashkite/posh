@@ -5,35 +5,37 @@ body
   height 100dvh
   display grid
   grid-template-rows auto 1fr auto
-  justify-content center
-  justify-items center
+  grid-template-columns 100%
 
-body > header
+  & > header, & > footer
+    inline-size 100%
+    display flex
+    gap 1rem
+    align-items center
+    justify-content space-between
+    &:empty
+      display none
 
-  width inherit
-  padding 1rem
-  border-bottom 1px solid var(--primary-accent)
 
-  .logo
-    svg
-      height 2rem
+  & > header
+    padding 1rem
+    border-bottom 1px solid var(--primary-accent)
 
-body > main
+    .logo
+      svg
+        height 2rem
 
-  overflow auto
-  display flex
-  flex-flow column
-  justify-content center
-  width inherit
-  padding 1rem
-  gap 1rem
+  & > main
+    overflow auto
+    display flex
+    flex-flow column
+    padding 1rem
+    gap 1rem
 
-body > footer
+  & > footer
+    padding 1rem
+    display flex
+    justify-content center
+    border-top 1px solid var(--primary-accent)
 
-  width inherit
-  padding 1rem
-  display flex
-  justify-content center
-  border-top 1px solid var(--primary-accent)
-
-  smallest()
+    smallest()
