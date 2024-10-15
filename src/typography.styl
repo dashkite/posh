@@ -12,7 +12,6 @@
 h1, h2, h3, h4, h5, h6
   font-weight bold
   font-family var(--heading-font, var(--base-font))
-  min-width var(--heading-min-width, s("min(90vw, %s)", du(1)))
 
 i
   margin-right 0.25rem
@@ -41,14 +40,6 @@ main, form
   header
     small()
   
-p, ul, ol, blockquote, .copy
-  color var(--neutral-foreground)
-  font-family var(--copy-font, var(--base-font))
-  font-size var(--copy-font-size, 1rem)
-  line-height var(--copy-line-height, 1.5rem)
-  max-width var(--copy-max-width)
-  min-width var(--copy-min-width)
-
 article, section
 
   h1, h2, h3, h4, h5, h6, p, li, blockquote, .copy, ul
