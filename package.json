@@ -38,5 +38,8 @@
     "@dashkite/genie-module": "link:../genie-module",
     "@dashkite/genie-stylus": "link:../genie-stylus",
     "@dashkite/genie-watch": "link:../genie-watch"
+  },
+  "dependencies": {
+    "remixicon": "^4.3.0"
   }
 }

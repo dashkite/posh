@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      remixicon:
+        specifier: ^4.3.0
+        version: 4.3.0
     devDependencies:
       '@dashkite/amen':
         specifier: ^0.2.0
@@ -232,6 +236,9 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
+  remixicon@4.3.0:
+    resolution: {integrity: sha512-jRYQ37dTFSkJtvcxwTUAkIiXkYRvA9EDvVuXPNrmt2xf/VS//CRgFtsX2TAFBoQOhh9SDh7l6La4Xu12snEyxg==}
+
   reusify@1.0.4:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
@@ -422,6 +429,8 @@ snapshots:
   picomatch@2.3.1: {}
 
   queue-microtask@1.2.3: {}
+
+  remixicon@4.3.0: {}
 
   reusify@1.0.4: {}
 
