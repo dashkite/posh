@@ -101,6 +101,7 @@ main, .field
         &:checked::before
           transform scale(1)
 
+    & > 
     & > *
       margin 0.25rem
 
@@ -216,40 +217,8 @@ main, .field
       display flex
       flex-direction column
 
-      & > input[type="range"] 
+      & > input[type="range"]
         order 1
-        -webkit-appearance none
-        appearance none
-        background transparent
-        cursor pointer
-        border none
-        flex 1 1 auto
-
-        &::-webkit-slider-runnable-track
-          background var(--accent)
-          height 0.25rem
-          border-radius 0.25rem
-
-        &::-moz-range-track
-          background var(--accent)
-          height 0.25rem
-          border-radius 0.25rem
-
-        &::-webkit-slider-thumb
-          -webkit-appearance: none
-          appearance none
-          margin-top -5px
-          background-color var(--foreground)
-          height 0.75rem
-          width 0.25rem
-          border-radius 2px
-
-        &::-moz-range-thumb
-          border none
-          border-radius 2px
-          background-color var(--foreground)
-          height 0.75rem
-          width 0.25rem
 
       & > datalist
         order 2
@@ -290,11 +259,6 @@ main, .field
     & > input
       display none
 
-  &[type="range"]:focus
-    outline none
-      
-
-
   .radio-group
     display flex
     flex-direction column
@@ -304,3 +268,40 @@ main, .field
       line-height var(--smaller-copy-line-height)
       margin 0
       margin-left 1.5rem
+
+input[type="range"]
+  -webkit-appearance none
+  appearance none
+  background transparent
+  cursor pointer
+  border none
+  flex 1 1 auto
+
+  &::-webkit-slider-runnable-track
+    background var(--accent)
+    height 0.25rem
+    border-radius 0.25rem
+
+  &::-moz-range-track
+    background var(--accent)
+    height 0.25rem
+    border-radius 0.25rem
+
+  &::-webkit-slider-thumb
+    -webkit-appearance: none
+    appearance none
+    margin-top -5px
+    background-color var(--foreground)
+    height 0.75rem
+    width 0.25rem
+    border-radius 2px
+
+  &::-moz-range-thumb
+    border none
+    border-radius 2px
+    background-color var(--foreground)
+    height 0.75rem
+    width 0.25rem
+
+  &:focus
+    outline none
