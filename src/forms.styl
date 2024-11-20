@@ -44,29 +44,6 @@ main, .field
     flex-direction column
     margin -0.25rem
 
-    & > label:has(> input[type="checkbox"])
-      margin-inline-start 1rem
-      display flex
-      gap 1rem
-      align-items center
-      
-      & > input[type="checkbox"]
-        display grid
-        place-content center
-        font inherit
-        min-width 0
-        padding 0
-        appearance none
-        width 0.75rem
-        height 0.75rem
-        border 1px solid var(--accent)
-        background-color var(--background)
-        border-radius 0.25rem
-
-        &:checked
-          background-color var(--highlight)
-          border 1px solid var(--highlight)
-
     & > label:has(> input[type='radio'])
       margin-inline-start 1rem
       display flex
@@ -101,6 +78,7 @@ main, .field
         &:checked::before
           transform scale(1)
 
+    & > 
     & > *
       margin 0.25rem
 
@@ -176,32 +154,6 @@ main, .field
       &.longest
         height 16lh
 
-    input
-      display inline-block
-      border-radius 0.5rem
-      border 1px solid var(--form-border)
-      &:invalid
-        border 1px solid var(--warning)
-      color var(--foreground)    
-      background-color var(--background)
-      padding 0.75rem 0.75rem 0.5rem
-      &:focus
-        outline none
-        // background var(--form-focus-color)
-        border 1px solid var(--form-focus)
-
-      // hack to override chrome's default autofill
-      // which can't otherwise be overriden (wtf)
-      // https://issues.chromium.org/issues/40408794#comment77
-      &:autofill
-        background-color var(--form-autofill)
-        box-shadow 0 0 0 1.5rem var(--form-autofill) inset
-
-      &:disabled
-        opacity 0.5
-
-      font-family var(--monospace-font)
-
     & > select
       appearance none
       font-size var(--small-copy-font-size)
@@ -216,40 +168,8 @@ main, .field
       display flex
       flex-direction column
 
-      & > input[type="range"] 
+      & > input[type="range"]
         order 1
-        -webkit-appearance none
-        appearance none
-        background transparent
-        cursor pointer
-        border none
-        flex 1 1 auto
-
-        &::-webkit-slider-runnable-track
-          background var(--accent)
-          height 0.25rem
-          border-radius 0.25rem
-
-        &::-moz-range-track
-          background var(--accent)
-          height 0.25rem
-          border-radius 0.25rem
-
-        &::-webkit-slider-thumb
-          -webkit-appearance: none
-          appearance none
-          margin-top -5px
-          background-color var(--foreground)
-          height 0.75rem
-          width 0.25rem
-          border-radius 2px
-
-        &::-moz-range-thumb
-          border none
-          border-radius 2px
-          background-color var(--foreground)
-          height 0.75rem
-          width 0.25rem
 
       & > datalist
         order 2
@@ -290,11 +210,6 @@ main, .field
     & > input
       display none
 
-  &[type="range"]:focus
-    outline none
-      
-
-
   .radio-group
     display flex
     flex-direction column
@@ -304,3 +219,89 @@ main, .field
       line-height var(--smaller-copy-line-height)
       margin 0
       margin-left 1.5rem
+
+input
+  display inline-block
+  border-radius 0.5rem
+  border 1px solid var(--form-border)
+  &:invalid
+    border 1px solid var(--warning)
+  color var(--foreground)    
+  background-color var(--background)
+  padding 0.75rem 0.75rem 0.5rem
+  &:focus
+    outline none
+    // background var(--form-focus-color)
+    border 1px solid var(--form-focus)
+
+  // hack to override chrome's default autofill
+  // which can't otherwise be overriden (wtf)
+  // https://issues.chromium.org/issues/40408794#comment77
+  &:autofill
+    background-color var(--form-autofill)
+    box-shadow 0 0 0 1.5rem var(--form-autofill) inset
+
+  &:disabled
+    opacity 0.5
+
+  font-family var(--monospace-font)
+
+label:has(> input[type="checkbox"])
+  margin-inline-start 1rem
+  display flex
+  gap 1rem
+  align-items center
+  
+  & > input[type="checkbox"]
+    display grid
+    place-content center
+    font inherit
+    min-width 0
+    padding 0
+    appearance none
+    width 0.75rem
+    height 0.75rem
+    border 1px solid var(--accent)
+    background-color var(--background)
+    border-radius 0.25rem
+
+    &:checked
+      background-color var(--highlight)
+      border 1px solid var(--highlight)
+
+input[type="range"]
+  -webkit-appearance none
+  appearance none
+  background transparent
+  cursor pointer
+  border none
+  flex 1 1 auto
+
+  &::-webkit-slider-runnable-track
+    background var(--accent)
+    height 0.25rem
+    border-radius 0.25rem
+
+  &::-moz-range-track
+    background var(--accent)
+    height 0.25rem
+    border-radius 0.25rem
+
+  &::-webkit-slider-thumb
+    -webkit-appearance: none
+    appearance none
+    margin-top -5px
+    background-color var(--foreground)
+    height 0.75rem
+    width 0.25rem
+    border-radius 2px
+
+  &::-moz-range-thumb
+    border none
+    border-radius 2px
+    background-color var(--foreground)
+    height 0.75rem
+    width 0.25rem
+
+  &:focus
+    outline none
