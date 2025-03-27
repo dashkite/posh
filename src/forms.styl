@@ -5,7 +5,7 @@ form
 
   --form-border var(--highlight)
   --form-focus var(--highlight)
-  --form-autofill var(--highlight)
+  // --form-autofill var(--background)
 
   display flex
   flex-direction column
@@ -236,12 +236,16 @@ input
     // background var(--form-focus-color)
     border 1px solid var(--form-focus)
 
+  // NO NO NO NO
+  // Until we get styleable form controls
+  // rely on color-scheme property here
+  // NO NO NO NO
   // hack to override chrome's default autofill
   // which can't otherwise be overriden (wtf)
   // https://issues.chromium.org/issues/40408794#comment77
-  &:autofill
-    background-color var(--form-autofill)
-    box-shadow 0 0 0 1.5rem var(--form-autofill) inset
+  // &:autofill
+  //   background-color var(--background)
+  //   box-shadow 0 0 0 1.5rem var(--background) inset
 
   &:disabled
     opacity 0.5
