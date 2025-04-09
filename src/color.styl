@@ -1,25 +1,47 @@
-// TODO add support for secondary, tertiary schemes
-// TODO add mixins to generate properties for schemes
-//      ex: secondary()
-
 :root, :host
-  
+
   --primary-foreground var(--light-primary-foreground)
   --primary-background var(--light-primary-background)
   --primary-accent var(--light-primary-accent)
   --primary-highlight var(--light-primary-highlight)
 
   @media (prefers-color-scheme: dark)
+    color-scheme dark
     --primary-foreground var(--dark-primary-foreground)
     --primary-background var(--dark-primary-background)
     --primary-accent var(--dark-primary-accent)
     --primary-highlight var(--dark-primary-highlight)
-    color-scheme dark
+    --secondary-foreground var(--dark-secondary-foreground)
+    --secondary-background var(--dark-secondary-background)
+    --secondary-accent var(--dark-secondary-accent)
+    --secondary-highlight var(--dark-secondary-highlight)
+    --tertiary-foreground var(--dark-tertiary-foreground)
+    --tertiary-background var(--dark-tertiary-background)
+    --tertiary-accent var(--dark-tertiary-accent)
+    --tertiary-highlight var(--dark-tertiary-highlight)
 
   --foreground var(--primary-foreground)
   --background var(--primary-background)
   --accent var(--primary-accent)
   --highlight var(--primary-highlight)
+
+  .primary
+    --foreground var(--primary-foreground)
+    --background var(--primary-background)
+    --accent var(--primary-accent)
+    --highlight var(--primary-highlight)
+
+  .secondary
+    --foreground var(--secondary-foreground)
+    --background var(--secondary-background)
+    --accent var(--secondary-accent)
+    --highlight var(--secondary-highlight)
+
+  .tertiary
+    --foreground var(--tertiary-foreground)
+    --background var(--tertiary-background)
+    --accent var(--tertiary-accent)
+    --highlight var(--tertiary-highlight)
 
   @css {
     html {
@@ -30,6 +52,6 @@
     }
   }
 
-  body, .body
+  body
     color var(--foreground)
     background var(--background)
