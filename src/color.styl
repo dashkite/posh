@@ -4,6 +4,10 @@
   --primary-background var(--light-primary-background)
   --primary-accent var(--light-primary-accent)
   --primary-highlight var(--light-primary-highlight)
+  --primary-success: var(--light-primary-success)
+  --primary-info: var(--light-primary-info)
+  --primary-warning: var(--light-primary-warning)
+  --primary-failure: var(--light-primary-failure)
 
   @media (prefers-color-scheme: dark)
     color-scheme dark
@@ -11,46 +15,67 @@
     --primary-background var(--dark-primary-background)
     --primary-accent var(--dark-primary-accent)
     --primary-highlight var(--dark-primary-highlight)
+    --primary-success: var(--dark-primary-success)
+    --primary-info: var(--dark-primary-info)
+    --primary-warning: var(--dark-primary-warning)
+    --primary-failure: var(--dark-primary-failure)
+
     --secondary-foreground var(--dark-secondary-foreground)
     --secondary-background var(--dark-secondary-background)
     --secondary-accent var(--dark-secondary-accent)
     --secondary-highlight var(--dark-secondary-highlight)
+    --secondary-success: var(--dark-secondary-success)
+    --secondary-info: var(--dark-secondary-info)
+    --secondary-warning: var(--dark-secondary-warning)
+    --secondary-failure: var(--dark-secondary-failure)
+
     --tertiary-foreground var(--dark-tertiary-foreground)
     --tertiary-background var(--dark-tertiary-background)
     --tertiary-accent var(--dark-tertiary-accent)
     --tertiary-highlight var(--dark-tertiary-highlight)
+    --tertiary-success: var(--dark-tertiary-success)
+    --tertiary-info: var(--dark-tertiary-info)
+    --tertiary-warning: var(--dark-tertiary-warning)
+    --tertiary-failure: var(--dark-tertiary-failure)
 
   --foreground var(--primary-foreground)
   --background var(--primary-background)
   --accent var(--primary-accent)
   --highlight var(--primary-highlight)
+  --success: var(--primary-success)
+  --info: var(--primary-info)
+  --warning: var(--primary-warning)
+  --failure: var(--primary-failure)
 
   .primary
     --foreground var(--primary-foreground)
     --background var(--primary-background)
     --accent var(--primary-accent)
     --highlight var(--primary-highlight)
+    --success: var(--primary-success)
+    --info: var(--primary-info)
+    --warning: var(--primary-warning)
+    --failure: var(--primary-failure)
 
   .secondary
     --foreground var(--secondary-foreground)
     --background var(--secondary-background)
     --accent var(--secondary-accent)
     --highlight var(--secondary-highlight)
+    --success: var(--secondary-success)
+    --info: var(--secondary-info)
+    --warning: var(--secondary-warning)
+    --failure: var(--secondary-failure)
 
   .tertiary
     --foreground var(--tertiary-foreground)
     --background var(--tertiary-background)
     --accent var(--tertiary-accent)
     --highlight var(--tertiary-highlight)
-
-  @css {
-    html {
-      --success: color-mix(in lch, var(--highlight), green 25%);
-      --info: color-mix(in lch, var(--highlight), blue 25%);
-      --warning: color-mix(in lch, var(--highlight), yellow 25%);
-      --failure: color-mix(in lch, var(--highlight), red 25%);
-    }
-  }
+    --success: var(--tertiary-success)
+    --info: var(--tertiary-info)
+    --warning: var(--tertiary-warning)
+    --failure: var(--tertiary-failure)
 
   body
     color var(--foreground)
