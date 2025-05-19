@@ -27,7 +27,7 @@ form
   & > div
     display grid
     grid-auto-flow row
-    grid-template-columns repeat(auto-fit, minmax(8rem, 1fr))
+    grid-template-columns repeat(auto-fit, minmax(12rem, 1fr))
     gap 1em
 
 main, .field
@@ -127,31 +127,6 @@ main, .field
       color var(--warning)
       min-height var(--copy-line-height)
 
-    textarea
-      padding 0.75rem 0.75rem 0.5rem
-      border-radius 0.5rem
-      border 1px solid var(--form-border)
-      color var(--foreground)
-      background var(--background)
-      max-width var(--copy-max-width)
-      &:focus
-        outline none
-        // background var(--form-focus-color)
-        border 1px solid var(--accent)
-      font-family var(--monospace-font)
-      height 4lh
-      &.shortest
-        height 1lh
-      &.shorter
-        height 2lh
-      &.short
-        height 3lh
-      &.long
-        height 8lh
-      &.longer
-        height 12lh
-      &.longest
-        height 16lh
 
     & > select
       appearance none
@@ -221,6 +196,7 @@ main, .field
 
 input
   display inline-block
+  width 100%
   border-radius 0.5rem
   border 1px solid var(--accent)
   &:invalid
@@ -312,3 +288,30 @@ input[type="range"]
 
   &:focus
     outline none
+
+textarea
+  width 100%
+  padding 0.75rem 0.75rem 0.5rem
+  border-radius 0.5rem
+  border 1px solid var(--form-border)
+  color var(--foreground)
+  background var(--background)
+  max-width var(--copy-max-width)
+  &:focus
+    outline none
+    // background var(--form-focus-color)
+    border 1px solid var(--accent)
+  font-family var(--monospace-font)
+  height 4lh
+  &.shortest
+    height 1lh
+  &.shorter
+    height 2lh
+  &.short
+    height 3lh
+  &.long
+    height 8lh
+  &.longer
+    height 12lh
+  &.longest
+    height 16lh
