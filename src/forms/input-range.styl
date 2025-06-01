@@ -1,0 +1,54 @@
+div:has(> input[type="range"])
+  display flex
+  flex-direction column
+
+  & > input[type="range"]
+    order 1
+
+  & > datalist
+    order 2
+    flex 1 1 auto
+    display flex
+    justify-content space-between
+
+    & > option
+      display none
+      &:first-child, &:last-child
+        display inline
+
+input[type="range"]
+  -webkit-appearance none
+  appearance none
+  background transparent
+  cursor pointer
+  border none
+  flex 1 1 auto
+
+  &::-webkit-slider-runnable-track
+    background var(--accent)
+    height 0.25rem
+    border-radius 0.25rem
+
+  &::-moz-range-track
+    background var(--accent)
+    height 0.25rem
+    border-radius 0.25rem
+
+  &::-webkit-slider-thumb
+    -webkit-appearance none
+    appearance none
+    margin-top -0.25rem
+    background-color var(--foreground)
+    height 0.75rem
+    width 1rem
+    border-radius 2px
+
+  &::-moz-range-thumb
+    border none
+    border-radius 2px
+    background-color var(--foreground)
+    height 0.75rem
+    width 1rem
+
+  &:focus
+    outline none

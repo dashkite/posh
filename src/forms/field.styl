@@ -1,0 +1,84 @@
+// we define these outside the context of a form so they 
+// can work within field-level Web Components or other contexts
+
+// a hint popover followed by a div containing a label
+// is treated as a field hint
+div[popover="hint"]:has( + div > label)
+
+  // display properties are assigned in the open
+  // rule, since popups are hidden by default
+
+  // we anchor the hint to the popup button
+  // preferring to go left or right or on top
+  // so we don't cover the input
+
+  // not sure why we need margin 0 here
+  margin 0
+  position absolute
+  position-area block-start center
+  position-try most-width inline-start, inline-end
+
+  // style the popup as a little window
+  margin 0.5rem
+  border 1px solid var(--information)
+  border-radius 0.5rem
+  padding 0.5rem
+  background var(--background)
+  color var(--foreground)
+
+  // make the text a bit smaller than the form text
+  // and italicized to distinguish it from the form
+  font-size var(--small-font-size)
+  line-height var(--small-line-height)
+  font-style italic
+
+  // give all hints a uniform width
+  inline-size 18rem
+
+  // transitions for anchor positioning are buggy?
+  // restore once we're confident they work...
+  // opacity 0
+  // transition display 1s, opacity 1s
+  // transition-behavior allow-discrete
+
+  &:popover-open
+    display flex
+    flex-flow column
+    gap 1rem
+
+    // more transition related styling
+    // see above
+
+    // opacity 1
+    
+    // @starting-style
+    //   opacity 0
+    //   display none
+
+// we need to wrap the label in a div so that we 
+// can display the hint button
+div:has ( label )
+  display grid
+  
+
+  & > button[popovertarget]
+    // we want to display the button alongside the label
+    display inline-block
+
+    // remove the default button styling
+    min-inline-size unset
+    padding-inline 0
+    padding-block 0
+    border none
+    background var(--background)
+    color var(--information)
+    font-size var(--large-font-size)
+
+  // admonition
+  & > input + div
+    // leave room even when empty so the form
+    // doesn't shift when displayed
+    min-block-size 1lh
+    font-size var(--small-font-size)
+    line-height var(--small-line-height)
+  

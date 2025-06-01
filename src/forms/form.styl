@@ -1,0 +1,38 @@
+form
+  display grid
+  grid-auto-flow row
+  grid-template-columns 1fr
+  gap 2rem
+
+  // up to 2 columns
+  --_number-of-columns 2
+  --_minimum-column-size 12rem
+  --_maximum-column-size 24rem
+  --_gap-size 1.5rem
+
+  // nc + g(n-1)
+  // where
+  //  n: number of columns
+  //  c: max column size
+  //  g: gap size
+  max-width calc(((var(--_number-of-columns) * var(--_maximum-column-size))) + (var(--_gap-size) * (var(--_number-of-columns) - 1)))
+  
+  // we introduce some special styling for the footer so we can
+  // use it as a button panel
+  & > footer
+    display flex
+    flex-flow row
+    justify-content end
+    align-items center
+    gap 1rem
+    border-top 1px solid var(--accent)    
+    padding-block-start 1rem
+    padding-inline 1rem
+
+  // form contents (fields or field groups) go inside a section or main
+  // main would be used within a Web Component
+  & > main, & > section
+    display grid
+    grid-auto-flow row
+    grid-template-columns repeat(auto-fit, minmax(var(--_minimum-column-size), var(--_maximum-column-size)))
+    gap var(--_gap-size)
