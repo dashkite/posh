@@ -15,12 +15,13 @@ div[popover="hint"]:has( + div > label)
   // not sure why we need margin 0 here
   margin 0
   position absolute
-  position-area block-start center
-  position-try most-width inline-start, inline-end
+  position-area inline-end center
+  // this doesn't seem to work yet...
+  position-try most-width flip-inline, flip-block
 
   // style the popup as a little window
   margin 0.5rem
-  border 1px solid var(--information)
+  border 1px solid var(--accent)
   border-radius 0.5rem
   padding 0.5rem
   background var(--background)
@@ -33,7 +34,8 @@ div[popover="hint"]:has( + div > label)
   font-style italic
 
   // give all hints a uniform width
-  inline-size 18rem
+  min-inline-size content
+  max-inline-size 18rem
 
   // transitions for anchor positioning are buggy?
   // restore once we're confident they work...
@@ -57,10 +59,12 @@ div[popover="hint"]:has( + div > label)
 
 // we need to wrap the label in a div so that we 
 // can display the hint button
-div:has ( label )
-  display grid
+div:has( label )
+  display flex
+  flex-flow row
+  flex-wrap nowrap
+  gap 0.5rem
   
-
   & > button[popovertarget]
     // we want to display the button alongside the label
     display inline-block
@@ -71,11 +75,11 @@ div:has ( label )
     padding-block 0
     border none
     background var(--background)
-    color var(--information)
+    color var(--highlight)
     font-size var(--large-font-size)
 
   // admonition
-  & > input + div
+  & + div
     // leave room even when empty so the form
     // doesn't shift when displayed
     min-block-size 1lh

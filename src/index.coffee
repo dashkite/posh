@@ -1,3 +1,5 @@
+import __anchorPositioningPolyfill from "@oddbird/css-anchor-positioning/fn"
+
 import reset from "./reset"
 import normalize from "./normalize"
 import typography from "./typography"
