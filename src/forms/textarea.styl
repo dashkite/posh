@@ -1,15 +1,21 @@
 textarea
+  display inline-block
   width 100%
   padding 0.75rem 0.75rem 0.5rem
   border-radius 0.5rem
-  border 1px solid var(--form-border)
+  border 1px solid var(--accent)
+  &:invalid
+    border 1px solid var(--warning)
   color var(--foreground)
   background var(--background)
+  padding-block 0.75rem
+  padding-inline-start 0.5rem
   max-width var(--copy-max-width)
   &:focus
     outline none
-    // background var(--form-focus-color)
     border 1px solid var(--accent)
+  &:disabled
+    opacity 0.5
   font-family var(--monospace-font)
   height 4lh
   &.shortest
@@ -24,3 +30,18 @@ textarea
     height 12lh
   &.longest
     height 16lh
+
+  // hack to override chrome's default autofill
+  // which can't otherwise be overriden (wtf)
+  // https://issues.chromium.org/issues/40408794#comment77
+
+  // this technique adapted from:
+  // https://codepen.io/team/css-tricks/pen/oxyJxR
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus
+    border 1px solid var(--highlight)
+    -webkit-text-fill-color var(--highlight)
+    -webkit-box-shadow 0 0 0px 1000px #000 inset
+    transition background-color 5000s ease-in-out 0s

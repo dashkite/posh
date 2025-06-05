@@ -21,7 +21,7 @@ div[popover="hint"]:has( + div > label)
 
   // style the popup as a little window
   margin 0.5rem
-  border 1px solid var(--accent)
+  border 1px solid var(--information)
   border-radius 0.5rem
   padding 0.5rem
   background var(--background)
@@ -75,11 +75,14 @@ div:has( label )
     padding-block 0
     border none
     background var(--background)
-    color var(--highlight)
+    color var(--information)
     font-size var(--large-font-size)
 
-  // admonition
-  & + div
+// admonition
+:has( label ), slot[name="label"]
+  & ~ div:last-child
+    display flex
+    flex-flow row
     // leave room even when empty so the form
     // doesn't shift when displayed
     min-block-size 1lh
