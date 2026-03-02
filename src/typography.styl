@@ -38,12 +38,18 @@ h3
 
 article, .copy
 
-  & > :is(section, header, footer)
+  section, header, footer
     padding-inline 1rem
 
   .rule
     padding-block-end 1rem
     border-bottom 1px solid var(--accent)
+
+  header
+    p
+      --copy-font-size var(--large-copy-font-size)
+      --copy-line-height var(--large-copy-line-height)
+      font-style italic
 
 article, .copy, :is(article, .copy) :is(section, header, footer)
 
