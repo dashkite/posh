@@ -22,6 +22,9 @@ button
   border 1px solid var(--highlight)
   border-radius 0.5rem
   min-width 8rem
+  transition-property box-shadow
+  transition-duration 0.25s
+  transition-timing-function ease
 
   &:focus-visible
     outline 1px solid var(--accent)
@@ -29,6 +32,9 @@ button
 
   &:disabled
     opacity 33%
+  
+  &:active
+    box-shadow inset -2px -2px var(--accent)
 
 // nav
 //   & > a, & > .link
