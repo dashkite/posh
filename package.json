@@ -47,6 +47,6 @@
   },
   "dependencies": {
     "@oddbird/css-anchor-positioning": "^0.6.1",
-    "remixicon": "^4.6.0"
+    "remixicon": "^4.9.1"
   }
 }
