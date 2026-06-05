@@ -1,6 +1,6 @@
 {
   "name": "@dashkite/posh",
-  "version": "0.4.17",
+  "version": "0.4.31",
   "description": "Application CSS",
   "keywords": [],
   "homepage": "https://github.com/dashkite/posh#readme",
@@ -34,6 +34,7 @@
     "release": "genie release"
   },
   "devDependencies": {
+
     "@dashkite/amen": "0.5.0",
     "@dashkite/amen-console": "0.4.0",
     "@dashkite/assert": "0.3.0",
@@ -48,5 +49,6 @@
   "dependencies": {
     "@oddbird/css-anchor-positioning": "0.6.1",
     "remixicon": "4.6.0"
+
   }
 }
